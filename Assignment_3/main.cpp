@@ -1,33 +1,44 @@
 #include <iostream>
+#include <dlfcn.h>
 using namespace std;
 
-char* encrypt(char* rawText, int key) {
-    for(int i = 0; i < strlen(rawText); i++) {
-        if(isupper(rawText[i])) {
-            rawText[i] = char(int((rawText[i] - 'A' + key + 26) % 26 + 'A'));
-        }
-        else if(islower(rawText[i])) {
-            rawText[i] = char(int((rawText[i] - 'a' + key + 26) % 26 + 'a'));
-        }
-    }
-    return rawText;
-}
-
-char* decrypt(char* encryptedText, int key) {
-    return encrypt(encryptedText, -key);
+extern "C" {
+    typedef char* (*encrypt_func)(char*, int);
+    typedef char* (*decrypt_func)(char*, int);
 }
 
 int main() {
-//    cout << "Enter text to encrypt: ";
-    cout << "Enter text to decrypt: ";
-    char *text = new char[256];
-    cin.getline(text, 256);
-    cout << "Enter the encryption key: ";
-    int key;
-    cin >> key;
-//    cout << encrypt(text, key);
-    cout << decrypt(text, key);
+    void* handle = dlopen("./mylib.so", RTLD_LAZY);
+
+    if(!handle) {
+        cout << "Error" << dlerror() << endl;
+        return 1;
+    }
+
+    encrypt_func encrypt = reinterpret_cast<encrypt_func>(dlsym(handle, "encrypt"));
+    if(!encrypt) {
+        cout << "Error with encrypt" << dlerror() << endl;
+        return 1;
+    }
+
+    decrypt_func decrypt = reinterpret_cast<encrypt_func>(dlsym(handle, "decrypt"));
+    if(!decrypt) {
+        cout << "Error with decrypt" << dlerror() << endl;
+        return 1;
+    }
+
+    char text[] = "Roses are red, violets are blue";
+    char* encryptedText = encrypt(text, 2);
+    cout << "Encrypted text: " << encryptedText << endl;
+
+    char* decryptedText = decrypt(encryptedText, 2);
+    cout << "Decrypted text: " << decryptedText << endl;
+
+    dlclose(handle);
+    return 0;
+
 }
+
 
 
 
