@@ -49,11 +49,29 @@ cmake_ninja_workdir = /Users/ivanyakovenko/CLionProjects/Assignment_3-Programmin
 
 build cmake_object_order_depends_target_Assignment_3_Programming_Paradigms: phony || CMakeFiles/Assignment_3_Programming_Paradigms.dir
 
-build CMakeFiles/Assignment_3_Programming_Paradigms.dir/Assignment_3/main.cpp.o: CXX_COMPILER__Assignment_3_Programming_Paradigms_unscanned_Debug /Users/ivanyakovenko/CLionProjects/Assignment_3-Programming_Paradigms/Assignment_3/main.cpp || cmake_object_order_depends_target_Assignment_3_Programming_Paradigms
-  DEP_FILE = CMakeFiles/Assignment_3_Programming_Paradigms.dir/Assignment_3/main.cpp.o.d
+build CMakeFiles/Assignment_3_Programming_Paradigms.dir/Assignment_3/Dynamic/main.cpp.o: CXX_COMPILER__Assignment_3_Programming_Paradigms_unscanned_Debug /Users/ivanyakovenko/CLionProjects/Assignment_3-Programming_Paradigms/Assignment_3/Dynamic/main.cpp || cmake_object_order_depends_target_Assignment_3_Programming_Paradigms
+  DEP_FILE = CMakeFiles/Assignment_3_Programming_Paradigms.dir/Assignment_3/Dynamic/main.cpp.o.d
   FLAGS = -g -std=gnu++2b -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.4.sdk -fcolor-diagnostics
   OBJECT_DIR = CMakeFiles/Assignment_3_Programming_Paradigms.dir
-  OBJECT_FILE_DIR = CMakeFiles/Assignment_3_Programming_Paradigms.dir/Assignment_3
+  OBJECT_FILE_DIR = CMakeFiles/Assignment_3_Programming_Paradigms.dir/Assignment_3/Dynamic
+
+build CMakeFiles/Assignment_3_Programming_Paradigms.dir/Assignment_3/Dynamic/mylib.cpp.o: CXX_COMPILER__Assignment_3_Programming_Paradigms_unscanned_Debug /Users/ivanyakovenko/CLionProjects/Assignment_3-Programming_Paradigms/Assignment_3/Dynamic/mylib.cpp || cmake_object_order_depends_target_Assignment_3_Programming_Paradigms
+  DEP_FILE = CMakeFiles/Assignment_3_Programming_Paradigms.dir/Assignment_3/Dynamic/mylib.cpp.o.d
+  FLAGS = -g -std=gnu++2b -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.4.sdk -fcolor-diagnostics
+  OBJECT_DIR = CMakeFiles/Assignment_3_Programming_Paradigms.dir
+  OBJECT_FILE_DIR = CMakeFiles/Assignment_3_Programming_Paradigms.dir/Assignment_3/Dynamic
+
+build CMakeFiles/Assignment_3_Programming_Paradigms.dir/Assignment_3/Static/static.cpp.o: CXX_COMPILER__Assignment_3_Programming_Paradigms_unscanned_Debug /Users/ivanyakovenko/CLionProjects/Assignment_3-Programming_Paradigms/Assignment_3/Static/static.cpp || cmake_object_order_depends_target_Assignment_3_Programming_Paradigms
+  DEP_FILE = CMakeFiles/Assignment_3_Programming_Paradigms.dir/Assignment_3/Static/static.cpp.o.d
+  FLAGS = -g -std=gnu++2b -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.4.sdk -fcolor-diagnostics
+  OBJECT_DIR = CMakeFiles/Assignment_3_Programming_Paradigms.dir
+  OBJECT_FILE_DIR = CMakeFiles/Assignment_3_Programming_Paradigms.dir/Assignment_3/Static
+
+build CMakeFiles/Assignment_3_Programming_Paradigms.dir/Assignment_3/Static/mystaticlib.cpp.o: CXX_COMPILER__Assignment_3_Programming_Paradigms_unscanned_Debug /Users/ivanyakovenko/CLionProjects/Assignment_3-Programming_Paradigms/Assignment_3/Static/mystaticlib.cpp || cmake_object_order_depends_target_Assignment_3_Programming_Paradigms
+  DEP_FILE = CMakeFiles/Assignment_3_Programming_Paradigms.dir/Assignment_3/Static/mystaticlib.cpp.o.d
+  FLAGS = -g -std=gnu++2b -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.4.sdk -fcolor-diagnostics
+  OBJECT_DIR = CMakeFiles/Assignment_3_Programming_Paradigms.dir
+  OBJECT_FILE_DIR = CMakeFiles/Assignment_3_Programming_Paradigms.dir/Assignment_3/Static
 
 
 # =============================================================================
@@ -63,7 +81,7 @@ build CMakeFiles/Assignment_3_Programming_Paradigms.dir/Assignment_3/main.cpp.o:
 #############################################
 # Link the executable Assignment_3_Programming_Paradigms
 
-build Assignment_3_Programming_Paradigms: CXX_EXECUTABLE_LINKER__Assignment_3_Programming_Paradigms_Debug CMakeFiles/Assignment_3_Programming_Paradigms.dir/Assignment_3/main.cpp.o
+build Assignment_3_Programming_Paradigms: CXX_EXECUTABLE_LINKER__Assignment_3_Programming_Paradigms_Debug CMakeFiles/Assignment_3_Programming_Paradigms.dir/Assignment_3/Dynamic/main.cpp.o CMakeFiles/Assignment_3_Programming_Paradigms.dir/Assignment_3/Dynamic/mylib.cpp.o CMakeFiles/Assignment_3_Programming_Paradigms.dir/Assignment_3/Static/static.cpp.o CMakeFiles/Assignment_3_Programming_Paradigms.dir/Assignment_3/Static/mystaticlib.cpp.o
   FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.4.sdk
   OBJECT_DIR = CMakeFiles/Assignment_3_Programming_Paradigms.dir
   POST_BUILD = :

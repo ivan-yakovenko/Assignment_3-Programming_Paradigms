@@ -3,4 +3,7 @@ project(Assignment_3_Programming_Paradigms)
 
 set(CMAKE_CXX_STANDARD 26)
 
-add_executable(Assignment_3_Programming_Paradigms Assignment_3/main.cpp)
+add_executable(Assignment_3_Programming_Paradigms Assignment_3/main.cpp
+        Assignment_3/mylib.cpp
+        Assignment_3/Static/static.cpp
+)
